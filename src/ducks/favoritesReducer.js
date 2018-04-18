@@ -1,0 +1,6 @@
+// import axios from "axios";
+
+// const GET_RESTAURANTS = "GET_RESTAURANTS";
+// const GET_FAVORITES = "GET_FAVORITES";
+// const ADD_TO_FAVORITES = "ADD_TO_FAVORITES";
+// const REMOVE_FROM_FAVORITES = "REMOVE_FROM_FAVORITES";
