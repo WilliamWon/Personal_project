@@ -1,37 +1,42 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getRestaurants } from "../../ducks/restaurantReducer";
+import { getPlaces } from "../../ducks/placesReducer";
+import PlaceCard from "./PlaceCard/PlaceCard";
+import { Link } from "react-router-dom";
 
 class Search extends Component {
   constructor() {
     super();
     this.state = {
-      restaurants: [],
       userInput: ""
     };
     this.getConfirm = this.getConfirm.bind(this);
   }
 
   getConfirm() {
-    this.props.getRestaurants(this.state.userInput);
+    this.props.getPlaces(this.state.userInput);
   }
 
   typing(val) {
-    console.log(val);
-    this.setState({ userInput: val });
+    let newVal = val.split(" ").join("+");
+    console.log(newVal);
+    this.setState({ userInput: newVal });
   }
 
   render() {
-    // const {userInput, restaurants} = this.state;
-    // let restList = restaurants.filter((e,i) => {
-    //     if(!userInput) {
-    //       return null;
-    //     }else if (e.name.includes(userInput)){
-    //       return e;
-    //     }
-    //   }).map(restaurant => {
-    //     let id =
-    //   })
+    const { places } = this.props;
+    console.log(this.props);
+    let placesList = places.map((place, index) => {
+      return (
+        <PlaceCard
+          key={index}
+          name={place.name}
+          id={place.id}
+          address={place.formatted_address}
+          rating={place.rating}
+        />
+      );
+    });
     return (
       <div>
         <p>Search Here</p>
@@ -40,14 +45,17 @@ class Search extends Component {
           onChange={e => this.typing(e.target.value)}
         />
         <button onClick={this.getConfirm}>Search</button>
+        {placesList}
+        <Link to="/">
+          <button>Back</button>
+        </Link>
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  console.log(state);
-  return { ...state.restaurantReducer };
+  return { ...state.placesReducer };
 };
 
-export default connect(mapStateToProps, { getRestaurants })(Search);
+export default connect(mapStateToProps, { getPlaces })(Search);

@@ -8,7 +8,9 @@ const massive = require("massive");
 const path = require("path");
 
 const { strat, logout, getUser } = require(`${__dirname}/controllers/authCtrl`);
-const restCtrl = require("./controllers/restCtrl");
+const placeCtrl = require("./controllers/placeCtrl");
+const postCtrl = require("./controllers/postCtrl");
+const infoCtrl = require("./controllers/infoCtrl");
 
 const port = process.env.PORT || 3001;
 
@@ -20,8 +22,6 @@ massive(process.env.CONNECTION_STRING)
 
 app.use(json());
 app.use(cors());
-
-app.get("/api/restaurants", restCtrl.getRest);
 
 app.use(
   session({
@@ -39,7 +39,6 @@ app.use(passport.session());
 passport.use(strat);
 
 passport.serializeUser((user, done) => {
-  console.log(user);
   app
     .get("db")
     .getUserByAuthid(user.id)
@@ -47,7 +46,7 @@ passport.serializeUser((user, done) => {
       if (!response[0]) {
         app
           .get("db")
-          .addUserByAuthid([user.displayName, user.id])
+          .addUserByAuthid([user.id, user.name.givenName, user.name.familyName])
           .then(res => {
             return done(null, res[0]);
           })
@@ -69,8 +68,19 @@ app.get(
     failureRedirect: "http://localhost:3000/#/login"
   })
 );
+
+//______Auth endpoints
 app.get("/logout", logout);
 app.get("/api/me", getUser);
+app.get("/api/places", placeCtrl.getPlaces);
+
+//______Info endpoints
+app.post("/api/info/:authid", infoCtrl.postInfo);
+
+//______Posts endpoints
+
+app.get("/api/posts/:id", postCtrl.getPosts);
+app.post("/api/posts", postCtrl.createPosts);
 
 app.listen(port, () => {
   console.log(`I am listening on port: ${port}`);

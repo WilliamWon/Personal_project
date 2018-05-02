@@ -1,0 +1,1 @@
+SELECT * FROM posts WHERE locationid = $1 ORDER BY created_at DESC;

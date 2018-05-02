@@ -16,10 +16,15 @@ const strat = new Auth0Strategy(
 );
 
 const getUser = (req, res) => {
+  console.log(req.user);
   if (!req.user) {
     res.status(401).json({ message: "Not Authorized" });
   } else {
-    res.status(200).json(req.user);
+    const dbInstance = req.app.get("db");
+    dbInstance.getUserByAuthid(req.user.authid).then(person => {
+      res.status(200).json(person[0]);
+    });
+    // res.status(200).json(req.user);
   }
 };
 
