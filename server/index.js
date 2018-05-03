@@ -90,7 +90,7 @@ app.delete("/api/posts/:id/:locationId", postCtrl.deletePosts);
 app.get("/api/bars", recCtrl.getBars);
 app.get("/api/museums", recCtrl.getMuseums);
 app.get("/api/restaurants", recCtrl.getRestaurants);
-app.get("/api/date", recCtrl.getDates);
+app.get("/api/dates", recCtrl.getDates);
 
 app.get("*", (req, res, next) => {
   res.sendFile(path.join(__dirname, "/../build/index.html"));
