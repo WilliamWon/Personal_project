@@ -16,7 +16,7 @@ const recCtrl = require("./controllers/recCtrl");
 const port = process.env.PORT || 3001;
 
 const app = express();
-
+app.use(express.static(`${__dirname}/../build`));
 massive(process.env.CONNECTION_STRING)
   .then(db => app.set("db", db))
   .catch(err => console.log(err));
@@ -92,6 +92,9 @@ app.get("/api/museums", recCtrl.getMuseums);
 app.get("/api/restaurants", recCtrl.getRestaurants);
 app.get("/api/date", recCtrl.getDates);
 
+app.get("*", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "/../build/index.html"));
+});
 app.listen(port, () => {
   console.log(`I am listening on port: ${port}`);
 });
