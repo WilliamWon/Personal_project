@@ -14,7 +14,7 @@ class LandingPage extends Component {
   render() {
     console.log(this.props.user);
     return (
-      <div>
+      <div className="landingPage">
         {this.props.user.first_name ? (
           this.props.user.first_name && this.props.user.email ? (
             <div>

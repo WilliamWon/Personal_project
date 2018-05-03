@@ -16,16 +16,16 @@ export function getPosts(id) {
     payload: axios.get(`/api/posts/${id}`)
   };
 }
-export function updatePost(id, text) {
+export function updatePost(id, text, locationId) {
   return {
     type: UPDATE_POSTS,
-    payload: axios.put(`/api/posts/${id}`, { text })
+    payload: axios.put(`/api/posts/${id}`, { text, locationId })
   };
 }
-export function deletePost(id) {
+export function deletePost(id, locationId) {
   return {
     type: DELETE_POSTS,
-    payload: axios.delete(`/api/posts/${id}`)
+    payload: axios.delete(`/api/posts/${id}/${locationId}`)
   };
 }
 export function createPost(username, text, time, userid, locationid) {

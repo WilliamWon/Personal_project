@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
 import { updateUser } from "../../ducks/userReducer";
 

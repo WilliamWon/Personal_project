@@ -7,6 +7,7 @@ const getPosts = (req, res, next) => {
   dbInstance
     .getPostsById([id])
     .then(response => {
+      console.log(response);
       res.status(200).send(response);
     })
     .catch(err => res.status(500).send(err));
@@ -14,12 +15,13 @@ const getPosts = (req, res, next) => {
 
 const updatePosts = (req, res, next) => {
   const dbInstance = req.app.get("db");
-  const { id, text } = req.body;
+  const { id } = req.params;
+  const { text, locationId } = req.body;
 
   dbInstance
-    .updatePostById([id, text])
-    .then(() => res.status(200).send())
-    .catch(() => res.status(500).send());
+    .updatePostsById([id, text, locationId])
+    .then(response => res.status(200).send(response))
+    .catch(err => res.status(500).send(err));
 };
 
 const createPosts = (req, res, next) => {
@@ -28,17 +30,23 @@ const createPosts = (req, res, next) => {
 
   dbInstance
     .addPosts([username, text, time, userid, locationid])
-    .then(resp => res.status(200).send(resp))
-    .catch(() => res.status(500).send());
+    .then(posts => res.status(200).send(posts))
+    .catch(err => res.status(500).send(err));
 };
 
 const deletePosts = (req, res, next) => {
   const dbInstance = req.app.get("db");
-  // const {}
+  const { id, locationId } = req.params;
+
+  dbInstance
+    .deletePostsById([id, locationId])
+    .then(response => res.status(200).send(response))
+    .catch(err => res.status(500).send(err));
 };
 
 module.exports = {
   getPosts,
   updatePosts,
-  createPosts
+  createPosts,
+  deletePosts
 };

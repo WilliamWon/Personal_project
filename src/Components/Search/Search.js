@@ -23,6 +23,11 @@ class Search extends Component {
     this.setState({ userInput: newVal });
   }
 
+  onSubmitHandler = e => {
+    e.preventDefault();
+    this.getConfirm();
+  };
+
   render() {
     const { places } = this.props;
     console.log(this.props);
@@ -40,11 +45,13 @@ class Search extends Component {
     return (
       <div>
         <p>Search Here</p>
-        <input
-          placeholder="Enter Keyword"
-          onChange={e => this.typing(e.target.value)}
-        />
-        <button onClick={this.getConfirm}>Search</button>
+        <form onSubmit={this.onSubmitHandler}>
+          <input
+            placeholder="Enter Keyword"
+            onChange={e => this.typing(e.target.value)}
+          />
+          <button>Search</button>
+        </form>
         {placesList}
         <Link to="/">
           <button>Back</button>

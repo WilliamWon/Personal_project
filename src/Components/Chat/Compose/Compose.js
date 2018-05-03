@@ -23,10 +23,15 @@ class Compose extends Component {
     createPostFn(username, text, time, userid, locationid);
     this.setState({ text: "" });
   }
+  onSubmitHandler = e => {
+    e.preventDefault();
+    this.createPost();
+  };
+
   render() {
     const { text } = this.state;
     return (
-      <section>
+      <form onSubmit={this.onSubmitHandler}>
         <div>
           <div>
             <div>ProfileIcon</div>
@@ -38,9 +43,9 @@ class Compose extends Component {
           />
         </div>
         <div>
-          <button onClick={this.createPost}>Compose</button>
+          <button>Compose</button>
         </div>
-      </section>
+      </form>
     );
   }
 }

@@ -81,6 +81,8 @@ app.post("/api/info/:authid", infoCtrl.postInfo);
 
 app.get("/api/posts/:id", postCtrl.getPosts);
 app.post("/api/posts", postCtrl.createPosts);
+app.put("/api/posts/:id", postCtrl.updatePosts);
+app.delete("/api/posts/:id/:locationId", postCtrl.deletePosts);
 
 app.listen(port, () => {
   console.log(`I am listening on port: ${port}`);

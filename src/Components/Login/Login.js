@@ -3,11 +3,14 @@ import "./Login.css";
 
 const Login = () => (
   <div id="loginPage">
-    <div id="loginBox">
+    <div id="loginPage__container">
       <div className="logo">VENT</div>
-      <a href={process.env.REACT_APP_LOGIN}>
-        <button className="loginButton">LOGIN</button>
-      </a>
+      <div id="loginBox">
+        <a href={process.env.REACT_APP_LOGIN}>
+          <button className="loginButton">LOGIN</button>
+        </a>
+      </div>
+      <div className="loginSideWall" />
     </div>
   </div>
 );
