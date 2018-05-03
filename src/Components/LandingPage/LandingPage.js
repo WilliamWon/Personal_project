@@ -5,6 +5,10 @@ import { getUser } from "../../ducks/userReducer";
 import "./LandingPage.css";
 import Information from "../Information/Information";
 import Login from "../Login/Login";
+import RecBars from "../Recommended/RecBars/RecBars";
+import RecDateNight from "../Recommended/RecDateNight/RecDateNight";
+import RecMuseums from "../Recommended/RecMuseums/RecMuseums";
+import RecRestaurants from "../Recommended/RecRestaurants/RecRestaurants";
 
 class LandingPage extends Component {
   componentDidMount() {
@@ -26,6 +30,10 @@ class LandingPage extends Component {
               <Link to="/search">
                 <button>Search</button>
               </Link>
+              <RecRestaurants />
+              <RecMuseums />
+              <RecDateNight />
+              <RecBars />
             </div>
           ) : (
             <Information />

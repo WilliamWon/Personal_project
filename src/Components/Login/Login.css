@@ -47,13 +47,14 @@
   animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955)
     both; */
   outline: none;
+  cursor: pointer;
 }
 
 .loginSideWall {
   position: relative;
   height: 100%;
-  width: 40vw;
-  background-color: #9dd7e8de;
+  width: 45vw;
+  background-color: #95d9ee;
 }
 /* @-webkit-keyframes loginButton {
   0% {

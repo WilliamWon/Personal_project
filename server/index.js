@@ -11,6 +11,7 @@ const { strat, logout, getUser } = require(`${__dirname}/controllers/authCtrl`);
 const placeCtrl = require("./controllers/placeCtrl");
 const postCtrl = require("./controllers/postCtrl");
 const infoCtrl = require("./controllers/infoCtrl");
+const recCtrl = require("./controllers/recCtrl");
 
 const port = process.env.PORT || 3001;
 
@@ -83,6 +84,13 @@ app.get("/api/posts/:id", postCtrl.getPosts);
 app.post("/api/posts", postCtrl.createPosts);
 app.put("/api/posts/:id", postCtrl.updatePosts);
 app.delete("/api/posts/:id/:locationId", postCtrl.deletePosts);
+
+//______Recommended endpoints
+
+app.get("/api/bars", recCtrl.getBars);
+app.get("/api/museums", recCtrl.getMuseums);
+app.get("/api/restaurants", recCtrl.getRestaurants);
+app.get("/api/date", recCtrl.getDates);
 
 app.listen(port, () => {
   console.log(`I am listening on port: ${port}`);

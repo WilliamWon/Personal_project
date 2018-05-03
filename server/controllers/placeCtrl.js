@@ -6,7 +6,7 @@ const getPlaces = (req, res) => {
   const { q } = req.query;
   axios
     .get(
-      `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${q}&key=AIzaSyAgVlDiYju9Uzz4BCmEYqHXCDb8G31byO4`
+      `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${q}&key=${key}`
     )
     .then(response => {
       places = response.data;
