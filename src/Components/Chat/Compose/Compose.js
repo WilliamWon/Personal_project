@@ -10,22 +10,18 @@ class Compose extends Component {
     this.state = {
       text: ""
     };
-    this.createPost = this.createPost.bind(this);
   }
   updateText(text) {
     this.setState({ text });
   }
-  createPost() {
+
+  onSubmitHandler = e => {
+    e.preventDefault();
     const { createPostFn, username, userid, locationid } = this.props;
     const { text } = this.state;
     let time = moment().format("LT");
-
     createPostFn(username, text, time, userid, locationid);
     this.setState({ text: "" });
-  }
-  onSubmitHandler = e => {
-    e.preventDefault();
-    this.createPost();
   };
 
   render() {

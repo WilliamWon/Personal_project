@@ -3,7 +3,7 @@ import "./Login.css";
 
 const Login = () => (
   <div id="loginPage">
-    <div className="box box1">
+    {/* <div className="box box1">
       <div className="minibox">
         <div className="logo">VENT</div>
       </div>
@@ -23,7 +23,20 @@ const Login = () => (
           <button className="loginButton">LOGIN</button>
         </a>
       </div>
+    </div> */}
+    <div id="header">
+      <div className="header__container">
+        <div className="logo">VENT</div>
+      </div>
     </div>
+    <section id="section-a">
+      <p className="slogan">Ventilate Your Thoughts</p>
+    </section>
+    <section id="section-b">
+      <a href={process.env.REACT_APP_LOGIN}>
+        <button className="loginButton">LOGIN</button>
+      </a>
+    </section>
   </div>
 );
 

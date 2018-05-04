@@ -1,10 +1,12 @@
 #loginPage {
-  /* width: 100%;
+  width: 100%;
   height: 100vh;
-  position: relative; */
-  display: grid;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* display: grid;
   grid-template-columns: 1fr 4fr 4fr;
-  grid-auto-rows: minmax(100.43px, auto);
+  grid-auto-rows: minmax(100.43px, auto); */
   /* justify-content: center;
   align-items: center; */
   /* background-image: url(../../images/bridge.jpg);
@@ -14,6 +16,66 @@
   background-attachment: fixed; */
   /* min-height: 500px; */
 }
+/*--- Header ---*/
+
+#header {
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(141, 245, 209);
+}
+
+.header__container {
+  height: 45px;
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*--- Section-a ---*/
+
+#section-a {
+  height: 65vh;
+  width: 100vw;
+  /* background-color: teal; */
+  display: flex;
+  align-items: center;
+}
+
+.slogan {
+  font-size: 2.4em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  line-height: 1.1em;
+  letter-spacing: 0.5px;
+}
+
+.loginButton {
+  width: 77.45px;
+  height: 30px;
+  background: rgb(141, 245, 209);
+  font-size: 0.7em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  border: none;
+  letter-spacing: 1.5px;
+  padding-top: 3.5px;
+  border-radius: 16px;
+  /* -webkit-animation: flip-horizontal-bottom 0.4s
+    cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+    both; */
+  outline: none;
+  cursor: pointer;
+}
+
+.loginButton:hover {
+  /* background: ; */
+  color: #333;
+}
 
 /* #loginPage__container {
   width: 100%;
@@ -21,13 +83,13 @@
   position: relative;
   display: grid;
 } */
-#loginPage > div {
-  /* background: #eee; */
-}
+/* #loginPage > div { */
+/* background: #eee; */
+/* } */
 
-#loginPage > div:nth-child(odd) {
-  /* background: #ddd; */
-}
+/* #loginPage > div:nth-child(odd) { */
+/* background: #ddd; */
+/* } */
 
 /*--- Box 1 ---*/
 
@@ -50,7 +112,8 @@
   font-family: "Bevan", cursive;
   font-size: 1.4em;
   letter-spacing: 1px;
-  color: #111c2e;
+  /* color: #111c2e; */
+  color: #1a1f27;
 }
 
 /*---- Box 2 ----*/
@@ -93,27 +156,6 @@
   align-items: center;
   justify-content: center;
 }
-
-.loginButton {
-  width: 77.45px;
-  height: 30px;
-  background: transparent;
-  font-size: 0.7em;
-  font-family: "Bevan", cursive;
-  border: solid 0.7px;
-  padding-top: 5.5px;
-  /* -webkit-animation: flip-horizontal-bottom 0.4s
-    cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
-  animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955)
-    both; */
-  outline: none;
-  cursor: pointer;
-}
-
-/* .loginButton:hover {
-  background: #eaeaea;
-  color: #333;
-} */
 
 /* @-webkit-keyframes loginButton {
   0% {

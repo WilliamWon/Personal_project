@@ -8,18 +8,26 @@ import { getPosts, deletePost, createPost } from "../../ducks/chatReducer";
 class Chat extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      posts: []
+    };
     this.createPostFn = this.createPostFn.bind(this);
   }
+
   componentDidMount() {
     let id = this.props.match.params.id;
     this.props.getPosts(id);
   }
 
   createPostFn(username, text, time, userid, locationid) {
-    this.props.createPost(username, text, time, userid, locationid);
+    this.props
+      .createPost(username, text, time, userid, locationid)
+      .then(() => this.props.getPosts(this.props.match.params.id));
   }
 
   render() {
+    console.log(this.props.posts);
+    console.log(this.state.posts);
     const locationid = this.props.match.params.id;
     return (
       <div>
