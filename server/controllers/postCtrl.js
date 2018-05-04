@@ -7,7 +7,6 @@ const getPosts = (req, res, next) => {
   dbInstance
     .getPostsById([id])
     .then(response => {
-      console.log(response);
       res.status(200).send(response);
     })
     .catch(err => res.status(500).send(err));

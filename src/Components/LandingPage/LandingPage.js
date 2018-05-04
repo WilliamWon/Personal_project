@@ -31,9 +31,9 @@ class LandingPage extends Component {
                 <button>Search</button>
               </Link>
               <RecRestaurants />
+              <RecBars />
               <RecMuseums />
               <RecDateNight />
-              <RecBars />
             </div>
           ) : (
             <Information />

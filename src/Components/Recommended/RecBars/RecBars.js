@@ -8,7 +8,7 @@ class RecBars extends Component {
   componentDidMount() {
     const { user, getBars } = this.props;
 
-    getBars(`Bars+in+${user.city}`);
+    getBars(`Bars+in+${user.city}+${user.state}`);
   }
   render() {
     const { bars } = this.props;
