@@ -7,11 +7,11 @@
   grid-auto-rows: minmax(100.43px, auto);
   /* justify-content: center;
   align-items: center; */
-  background-image: url(../../images/bridge.jpg);
+  /* background-image: url(../../images/bridge.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom left;
-  background-attachment: fixed;
+  background-attachment: fixed; */
   /* min-height: 500px; */
 }
 
@@ -76,9 +76,9 @@
 
 .box2__container__slogan {
   font-size: 3em;
-  font-family: "Bevan";
-  line-height: 1.3em;
-  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  line-height: 1.1em;
 }
 .box3 {
   display: grid;
@@ -108,6 +108,11 @@
     both; */
   outline: none;
   cursor: pointer;
+}
+
+.loginButton:hover {
+  background: #eaeaea;
+  color: #333;
 }
 
 /* @-webkit-keyframes loginButton {
