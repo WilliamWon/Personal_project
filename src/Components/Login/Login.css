@@ -110,10 +110,10 @@
   cursor: pointer;
 }
 
-.loginButton:hover {
+/* .loginButton:hover {
   background: #eaeaea;
   color: #333;
-}
+} */
 
 /* @-webkit-keyframes loginButton {
   0% {
