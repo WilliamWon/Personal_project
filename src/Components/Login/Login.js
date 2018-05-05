@@ -30,13 +30,14 @@ const Login = () => (
       </div>
     </div>
     <section id="section-a">
-      <p className="slogan">Ventilate Your Thoughts</p>
+      <div className="mid ">
+        <p className="slogan">Ventilate Your Thoughts</p>
+        <a href={process.env.REACT_APP_LOGIN}>
+          <button className="loginButton">LOGIN</button>
+        </a>
+      </div>
     </section>
-    <section id="section-b">
-      <a href={process.env.REACT_APP_LOGIN}>
-        <button className="loginButton">LOGIN</button>
-      </a>
-    </section>
+    <section id="section-b" />
   </div>
 );
 

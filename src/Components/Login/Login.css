@@ -24,7 +24,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(141, 245, 209);
 }
 
 .header__container {
@@ -38,28 +37,41 @@
 /*--- Section-a ---*/
 
 #section-a {
-  height: 65vh;
-  width: 100vw;
+  height: 80vh;
+  width: auto;
+  background-image: url(../../images/bridge.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-attachment: fixed;
+  min-height: 500px;
   /* background-color: teal; */
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .slogan {
   font-size: 2.4em;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
-  line-height: 1.1em;
-  letter-spacing: 0.5px;
+  line-height: 1.4em;
+  letter-spacing: 2px;
+  color: white;
 }
 
 .loginButton {
-  width: 77.45px;
+  margin-top: 40px;
+  width: 110px;
   height: 30px;
-  background: rgb(141, 245, 209);
+  background: rgb(185, 230, 214);
   font-size: 0.7em;
   font-family: "Open Sans", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
+  color: #1a1f27;
   border: none;
   letter-spacing: 1.5px;
   padding-top: 3.5px;
@@ -73,10 +85,21 @@
 }
 
 .loginButton:hover {
-  /* background: ; */
+  background: white;
   color: #333;
 }
 
+@media (min-width: 700px) {
+  #header {
+    border-bottom: none;
+  }
+  .header__container {
+    justify-content: flex-start;
+  }
+  .slogan {
+    font-size: 4em;
+  }
+}
 /* #loginPage__container {
   width: 100%;
   height: 100%;
