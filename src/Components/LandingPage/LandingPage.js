@@ -18,18 +18,28 @@ class LandingPage extends Component {
   render() {
     console.log(this.props.user);
     return (
-      <div className="landingPage">
+      <div id="landingPage">
         {this.props.user.first_name ? (
           this.props.user.first_name && this.props.user.email ? (
-            <div>
-              <div className="logo">VENT</div>
-              <p>{`What's up ${this.props.user.first_name}?`}</p>
-              <a href={process.env.REACT_APP_LOGOUT}>
-                <button>Logout</button>
-              </a>
-              <Link to="/search">
-                <button>Search</button>
-              </Link>
+            <div id="loginSuccess">
+              <div id="header">
+                <div className="header__container header__container__success">
+                  <div />
+                  <div className="logo">VENT</div>
+                  <a href={process.env.REACT_APP_LOGOUT}>
+                    <button>Logout</button>
+                  </a>
+                </div>
+              </div>
+              <section class="section-e">
+                <p>{`What's up ${this.props.user.first_name}?`}</p>
+                <a href={process.env.REACT_APP_LOGOUT}>
+                  <button>Logout</button>
+                </a>
+                <Link to="/search">
+                  <button>Search</button>
+                </Link>
+              </section>
               <RecRestaurants />
               <RecBars />
               <RecMuseums />

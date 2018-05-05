@@ -30,6 +30,7 @@ const Login = () => (
       </div>
     </div>
     <section id="section-a">
+      <div className="bg" />
       <div className="mid ">
         <p className="slogan">Ventilate Your Thoughts</p>
         <a href={process.env.REACT_APP_LOGIN}>

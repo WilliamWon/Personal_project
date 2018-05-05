@@ -9,6 +9,7 @@ import {
   updateMyState,
   updateZip
 } from "../../ducks/infoReducer";
+import "./Information.css";
 
 class Information extends Component {
   render() {
@@ -22,35 +23,48 @@ class Information extends Component {
     } = this.props;
 
     return (
-      <div>
-        <div>
-          <p>Let us get to know you a little better</p>
+      <div id="infoInput">
+        <div id="header">
+          <div className="header__container">
+            <div className="logo">VENT</div>
+          </div>
+        </div>
+        <div className="infoInput__container">
+          <div className="infoInput__intro">
+            Let us get to know you a little better
+          </div>
           <input
+            className="infoInput username"
             placeholder="Desired Display Name"
             type="text"
             onChange={e => updateUserName(e.target.value)}
           />
           <input
+            className="infoInput email"
             placeholder="Primary Email"
             type="text"
             onChange={e => updateEmail(e.target.value)}
           />
           <input
+            className="infoInput address"
             placeholder="Home Address"
             type="text"
             onChange={e => updateAddress(e.target.value)}
           />
           <input
+            className="infoInput city"
             placeholder="City"
             type="text"
             onChange={e => updateCity(e.target.value)}
           />
           <input
+            className="infoInput state"
             placeholder="State"
             type="text"
             onChange={e => updateMyState(e.target.value)}
           />
           <input
+            className="infoInput zipcode"
             placeholder="Zipcode"
             type="number"
             onChange={e => updateZip(e.target.value)}

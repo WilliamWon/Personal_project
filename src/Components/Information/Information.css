@@ -1,0 +1,34 @@
+#infoInput {
+  width: 100%;
+  height: 100vh;
+}
+.infoInput__container {
+  position: relative;
+  padding-top: 50px;
+
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.infoInput__intro {
+  font-size: 1.3em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+.infoInput {
+  font-size: 16px;
+  height: 45px;
+  outline: none;
+  border: solid 1px teal;
+  padding-left: 10px;
+  border-radius: 24px;
+}
+
+.infoInput.username {
+  width: px;
+}

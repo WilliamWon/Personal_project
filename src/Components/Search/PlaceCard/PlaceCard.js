@@ -18,7 +18,9 @@ class PlaceCard extends Component {
     return (
       <div>
         <div>{name}</div>
-        <div>{address}</div>
+        <a>
+          <div>{address}</div>
+        </a>
         <div>{`Rating: ${rating}`}</div>
         <Link to={`/chat/${id}`}>
           <button> Chat </button>

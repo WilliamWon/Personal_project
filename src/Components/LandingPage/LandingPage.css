@@ -1,0 +1,18 @@
+#loginSuccess {
+  width: 100%;
+  height: 100vh;
+}
+.section-e {
+  width: 100vw;
+  height: 200px;
+}
+.header__container.header__container__success {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
+@media (min-width: 700px) {
+  .header__container.header__container__success {
+    display: flex;
+  }
+}
