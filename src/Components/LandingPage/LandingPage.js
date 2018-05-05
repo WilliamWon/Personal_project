@@ -9,6 +9,7 @@ import RecBars from "../Recommended/RecBars/RecBars";
 import RecDateNight from "../Recommended/RecDateNight/RecDateNight";
 import RecMuseums from "../Recommended/RecMuseums/RecMuseums";
 import RecRestaurants from "../Recommended/RecRestaurants/RecRestaurants";
+import Header from "../Header/Header";
 
 class LandingPage extends Component {
   componentDidMount() {
@@ -22,15 +23,7 @@ class LandingPage extends Component {
         {this.props.user.first_name ? (
           this.props.user.first_name && this.props.user.email ? (
             <div id="loginSuccess">
-              <div id="header">
-                <div className="header__container header__container__success">
-                  <div />
-                  <div className="logo">VENT</div>
-                  <a href={process.env.REACT_APP_LOGOUT}>
-                    <button>Logout</button>
-                  </a>
-                </div>
-              </div>
+              <Header />
               <section class="section-e">
                 <p>{`What's up ${this.props.user.first_name}?`}</p>
                 <a href={process.env.REACT_APP_LOGOUT}>

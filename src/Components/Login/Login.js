@@ -1,5 +1,6 @@
 import React from "react";
 import "./Login.css";
+import Header from "../Header/Header";
 
 const Login = () => (
   <div id="loginPage">
@@ -24,11 +25,7 @@ const Login = () => (
         </a>
       </div>
     </div> */}
-    <div id="header">
-      <div className="header__container">
-        <div className="logo">VENT</div>
-      </div>
-    </div>
+    <Header />
     <section id="section-a">
       <div className="bg" />
       <div className="mid ">

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { getPlaces } from "../../ducks/placesReducer";
 import PlaceCard from "./PlaceCard/PlaceCard";
 import { Link } from "react-router-dom";
+import Header from "../Header/Header";
 
 class Search extends Component {
   constructor() {
@@ -44,6 +45,7 @@ class Search extends Component {
     });
     return (
       <div>
+        <Header />
         <p>Search Here</p>
         <form onSubmit={this.onSubmitHandler}>
           <input

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { updateUser } from "../../ducks/userReducer";
+import Header from "../Header/Header";
+import "./InfoConfirm.css";
 
 class InfoConfirm extends Component {
   constructor(props) {
@@ -33,41 +35,52 @@ class InfoConfirm extends Component {
       return <Redirect to="/" />;
     }
     return (
-      <div>
-        <p>Does this information look correct?</p>
-        <div>
-          <div>
-            User: <p>{this.props.username}</p>
+      <div id="infoConfirm">
+        <Header />
+        <div className="infoConfirm__form">
+          <div className="infoConfirm__outro">
+            Does this information look correct?
+          </div>
+          <div className="infoConfirm__status__container">
+            <div>
+              <div className="infoConfirm__status">
+                User: <div>{this.props.username}</div>
+              </div>
+            </div>
+            <div>
+              <div className="infoConfirm__status">
+                Email: <div>{this.props.email}</div>
+              </div>
+            </div>
+            <div>
+              <div className="infoConfirm__status">
+                Address: <div>{this.props.street_address}</div>
+              </div>
+            </div>
+            <div>
+              <div className="infoConfirm__status">
+                City: <div>{this.props.city}</div>
+              </div>
+            </div>
+            <div>
+              <div className="infoConfirm__status">
+                State: <div>{this.props.myState}</div>
+              </div>
+            </div>
+            <div>
+              <div className="infoConfirm__status">
+                <div>Zipcode:</div> <div>{this.props.zipcode}</div>
+              </div>
+            </div>
+          </div>
+          <div className="infoConfirm__confirm__container">
+            {/* <Link to="/"> */}
+            <button className="infoInput__confirm" onClick={this.confirmInfo}>
+              Confirm
+            </button>
+            {/* </Link> */}
           </div>
         </div>
-        <div>
-          <div>
-            Email: <p>{this.props.email}</p>
-          </div>
-        </div>
-        <div>
-          <div>
-            Address: <p>{this.props.street_address}</p>
-          </div>
-        </div>
-        <div>
-          <div>
-            City: <p>{this.props.city}</p>
-          </div>
-        </div>
-        <div>
-          <div>
-            State: <p>{this.props.myState}</p>
-          </div>
-        </div>
-        <div>
-          <div>
-            Zipcode: <p>{this.props.zipcode}</p>
-          </div>
-        </div>
-        {/* <Link to="/"> */}
-        <button onClick={this.confirmInfo}>Confirm</button>
-        {/* </Link> */}
       </div>
     );
   }

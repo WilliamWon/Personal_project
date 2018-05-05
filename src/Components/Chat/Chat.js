@@ -4,6 +4,7 @@ import Post from "./Post/Post";
 import Compose from "./Compose/Compose";
 import { connect } from "react-redux";
 import { getPosts, deletePost, createPost } from "../../ducks/chatReducer";
+import Header from "../Header/Header";
 
 class Chat extends Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class Chat extends Component {
     const locationid = this.props.match.params.id;
     return (
       <div>
+        <Header />
         <p>This is the Chat</p>
         <Compose createPostFn={this.createPostFn} locationid={locationid} />
         <Post locationId={this.props.match.params.id} />
