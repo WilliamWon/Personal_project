@@ -71,6 +71,11 @@
   cursor: pointer;
 }
 
+.loginButton:hover {
+  background: white;
+  color: #333;
+}
+
 @media (min-height: 820px) {
   .infoInput__intro {
     height: 20vh;
