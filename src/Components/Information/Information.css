@@ -2,31 +2,48 @@
   width: 100%;
   height: 100vh;
 }
+
+#infoInput__background {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: #1ed4f4; */
+  background-color: #a7dbef;
+}
+
 .infoInput__container {
   position: relative;
-  width: 100%;
-  height: 80vh;
+  width: 70vw;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background: white;
 }
 
 .infoInput__intro {
   width: 100%;
-  height: 20vh;
-  font-size: 1.2em;
+  height: 30vh;
+  font-size: 1.4em;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+.infoInput__head {
+  font-family: "Bevan", cursive;
+  font-size: 2.1em;
+}
+
 .infoInputArea {
-  font-size: 16px;
+  font-size: 0.7em;
   height: 30px;
-  width: 250px;
   outline: none;
   border: solid 1px rgb(255, 204, 128);
   padding-left: 20px;
@@ -37,7 +54,7 @@
 
 .infoInput__sections {
   width: 100%;
-  height: 45vh;
+  height: 35vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,7 +63,7 @@
 
 .infoInput__confirm__container {
   width: 100%;
-  height: 15vh;
+  height: 20vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -76,17 +93,67 @@
   opacity: 0.6;
 }
 
+.filler {
+  width: 60vw;
+  height: 5vh;
+  background-color: white;
+}
+
+.cityState {
+  width: 323px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.city {
+  width: 225px;
+}
+
+.state {
+  width: 45px;
+}
+
 @media (min-height: 820px) {
   .infoInput__intro {
-    height: 20vh;
+    height: 30vh;
     font-size: 1.7em;
   }
   .infoInput__sections {
     height: 35vh;
+    justify-content: space-around;
   }
   .infoInput__confirm__container {
-    height: 18vh;
+    height: 15vh;
     justify-content: flex-start;
     padding-top: 57px;
+  }
+}
+@media (max-width: 375px) {
+  .infoInput__intro {
+    font-size: 1em;
+  }
+  .infoInput__head {
+    font-size: 1.9em;
+  }
+}
+
+@media (max-width: 980px) {
+  #infoInput__background {
+    background: none;
+  }
+}
+
+@media (max-width: 320px) {
+  .infoInputArea {
+    width: 240px;
+  }
+  .cityState {
+    width: 263px;
+  }
+  .city {
+    width: 170px;
+  }
+  .state {
+    width: 45px;
   }
 }

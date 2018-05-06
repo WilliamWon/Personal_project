@@ -4,7 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #1ed4f4;
+  /* background: #1ed4f4; */
+  background: rgb(34, 34, 34);
 }
 
 .header__container {

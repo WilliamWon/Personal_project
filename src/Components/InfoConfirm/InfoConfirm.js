@@ -44,32 +44,42 @@ class InfoConfirm extends Component {
           <div className="infoConfirm__status__container">
             <div>
               <div className="infoConfirm__status">
-                User: <div>{this.props.username}</div>
+                User:{" "}
+                <div className="infoConfirm__results">
+                  {this.props.username}
+                </div>
               </div>
             </div>
             <div>
               <div className="infoConfirm__status">
-                Email: <div>{this.props.email}</div>
+                Email:{" "}
+                <div className="infoConfirm__results">{this.props.email}</div>
               </div>
             </div>
             <div>
               <div className="infoConfirm__status">
-                Address: <div>{this.props.street_address}</div>
+                Address:{" "}
+                <div className="infoConfirm__results">
+                  {this.props.street_address}
+                </div>
               </div>
             </div>
             <div>
               <div className="infoConfirm__status">
-                City: <div>{this.props.city}</div>
+                City:{" "}
+                <div className="infoConfirm__results">{this.props.city}</div>
               </div>
             </div>
             <div>
               <div className="infoConfirm__status">
-                State: <div>{this.props.myState}</div>
+                State:{" "}
+                <div className="infoConfirm__results">{this.props.myState}</div>
               </div>
             </div>
             <div>
               <div className="infoConfirm__status">
-                <div>Zipcode:</div> <div>{this.props.zipcode}</div>
+                <div>Zipcode:</div>{" "}
+                <div className="infoConfirm__results">{this.props.zipcode}</div>
               </div>
             </div>
           </div>

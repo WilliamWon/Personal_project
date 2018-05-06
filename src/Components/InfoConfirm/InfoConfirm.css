@@ -54,6 +54,10 @@
   font-size: 16px;
 }
 
+.infoConfirm__status {
+  font-size: 10;
+}
+
 @media (min-height: 820px) {
   .infoConfirm__outro {
     height: 20vh;
@@ -71,5 +75,11 @@
 @media (min-width: 700px) {
   .infoConfirm__status {
     width: 500px;
+  }
+}
+
+@media (max-width: 320px) {
+  .infoConfirm__status {
+    width: 240px;
   }
 }
