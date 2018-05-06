@@ -46,6 +46,12 @@ class Search extends Component {
     return (
       <div id="search">
         <Header />
+        <div className="sidenav">
+          <a>ABOUT</a>
+          <a />
+          <a />
+          <a />
+        </div>
         <p>Search Here</p>
         <form onSubmit={this.onSubmitHandler}>
           <input

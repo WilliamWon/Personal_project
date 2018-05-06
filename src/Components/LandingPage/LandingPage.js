@@ -24,11 +24,15 @@ class LandingPage extends Component {
           this.props.user.first_name && this.props.user.email ? (
             <div id="loginSuccess">
               <Header />
+              <div className="sideNav">
+                <a>About</a>
+                <a>Search</a>
+                <a>Favorites</a>
+                <a href={process.env.REACT_APP_LOGOUT}>Logout</a>
+              </div>
               <section class="section-e">
                 <p>{`What's up ${this.props.user.first_name}?`}</p>
-                <a href={process.env.REACT_APP_LOGOUT}>
-                  <button>Logout</button>
-                </a>
+
                 <Link to="/search">
                   <button>Search</button>
                 </Link>

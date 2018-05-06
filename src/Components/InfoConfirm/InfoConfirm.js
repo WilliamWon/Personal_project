@@ -37,58 +37,70 @@ class InfoConfirm extends Component {
     return (
       <div id="infoConfirm">
         <Header />
-        <div className="infoConfirm__form">
-          <div className="infoConfirm__outro">
-            Does this information look correct?
-          </div>
-          <div className="infoConfirm__status__container">
-            <div>
-              <div className="infoConfirm__status">
-                User:{" "}
-                <div className="infoConfirm__results">
-                  {this.props.username}
+        <div id="infoConfirm__background">
+          <div className="infoConfirm__form">
+            <div className="infoConfirm__outro">
+              <div className="infoConfirm__head">Almost Done</div>
+              Does this information look correct?
+            </div>
+            <div className="infoConfirm__status__container">
+              <div>
+                <div className="infoConfirm__status">
+                  User:
+                  <div className="infoConfirm__results">
+                    {this.props.username}
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="infoConfirm__status">
+                  Email:
+                  <div className="infoConfirm__results">{this.props.email}</div>
+                </div>
+              </div>
+              <div>
+                <div className="infoConfirm__status">
+                  Address:
+                  <div className="infoConfirm__results">
+                    {this.props.street_address}
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="infoConfirm__status">
+                  City:
+                  <div className="infoConfirm__results">{this.props.city}</div>
+                </div>
+              </div>
+              <div>
+                <div className="infoConfirm__status">
+                  State:
+                  <div className="infoConfirm__results">
+                    {this.props.myState}
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="infoConfirm__status">
+                  <div>Zipcode:</div>
+                  <div className="infoConfirm__results">
+                    {this.props.zipcode}
+                  </div>
                 </div>
               </div>
             </div>
-            <div>
-              <div className="infoConfirm__status">
-                Email:{" "}
-                <div className="infoConfirm__results">{this.props.email}</div>
-              </div>
+            <div className="infoConfirm__confirm__container">
+              {/* <Link to="/"> */}
+              <div className="filler__space" />
+              <button className="infoInput__confirm" onClick={this.confirmInfo}>
+                Confirm
+              </button>
+              <Link to="/">
+                <button className="backButton">Back</button>
+              </Link>
+              {/* </Link> */}
             </div>
-            <div>
-              <div className="infoConfirm__status">
-                Address:{" "}
-                <div className="infoConfirm__results">
-                  {this.props.street_address}
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="infoConfirm__status">
-                City:{" "}
-                <div className="infoConfirm__results">{this.props.city}</div>
-              </div>
-            </div>
-            <div>
-              <div className="infoConfirm__status">
-                State:{" "}
-                <div className="infoConfirm__results">{this.props.myState}</div>
-              </div>
-            </div>
-            <div>
-              <div className="infoConfirm__status">
-                <div>Zipcode:</div>{" "}
-                <div className="infoConfirm__results">{this.props.zipcode}</div>
-              </div>
-            </div>
-          </div>
-          <div className="infoConfirm__confirm__container">
-            {/* <Link to="/"> */}
-            <button className="infoInput__confirm" onClick={this.confirmInfo}>
-              Confirm
-            </button>
-            {/* </Link> */}
+            <div className="filler" />
           </div>
         </div>
       </div>
