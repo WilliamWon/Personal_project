@@ -44,17 +44,18 @@ class Search extends Component {
       );
     });
     return (
-      <div>
+      <div id="search">
         <Header />
         <p>Search Here</p>
         <form onSubmit={this.onSubmitHandler}>
           <input
+            className="keywordSearch"
             placeholder="Enter Keyword"
             onChange={e => this.typing(e.target.value)}
           />
           <button>Search</button>
         </form>
-        {placesList}
+        <div className="card__container">{placesList}</div>
         <Link to="/">
           <button>Back</button>
         </Link>

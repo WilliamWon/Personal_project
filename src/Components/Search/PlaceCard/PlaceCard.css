@@ -1,0 +1,65 @@
+.card__container {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  /* display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-gap: 1em; */
+  justify-content: center;
+}
+/* .card__container > div {
+  background: #eee;
+}
+
+.card__container > div:nth-child(odd) {
+  background: #ddd;
+} */
+
+.card {
+  width: 80vw;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__name__carrier {
+  width: 280px;
+  height: 93.33px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card__name {
+  font-size: 1.3em;
+  font-family: "Bevan", cursive;
+  letter-spacing: 0.5px;
+  line-height: 26px;
+}
+
+.card__line {
+  width: 100px;
+  height: 1px;
+  background-color: black;
+}
+
+.card__address__carrier {
+  width: 280px;
+  height: 93.33px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.card__address {
+  font-size: 0.6em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+
+.card__rating__carrier {
+  width: 280px;
+  height: 93.33px;
+}

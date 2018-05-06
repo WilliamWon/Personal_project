@@ -10,22 +10,29 @@ class PlaceCard extends Component {
       // display: false
     };
   }
+
   handleSwitch() {
     this.setState({ display: true });
   }
+
   render() {
-    const { name, address, rating, id } = this.props;
+    const { name, address, rating, id, open } = this.props;
     return (
-      <div>
-        <div>{name}</div>
-        <a>
-          <div>{address}</div>
-        </a>
-        <div>{`Rating: ${rating}`}</div>
-        <Link to={`/chat/${id}`}>
-          <button> Chat </button>
-        </Link>
-        <button>Favorite</button>
+      <div className="card">
+        <div className="card__name__carrier">
+          <div className="card__name">{name}</div>
+        </div>
+        <div className="card__line" />
+        <div className="card__address__carrier">
+          <div className="card__address">{address}</div>
+          <Link to={`/chat/${id}`}>
+            <button> Chat </button>
+          </Link>
+          <button>Favorite</button>
+        </div>
+        <div className="card__rating__carrier">
+          <div className="card__rating">{`Rating: ${rating}`}</div>
+        </div>
       </div>
     );
   }

@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 
 class RecCard1 extends Component {
   render() {
-    const { name, address, rating, id } = this.props;
+    const { name, address, rating, id, open } = this.props;
+    console.log(open);
     return (
       <div>
         <div>{name}</div>
         <div>{address}</div>
         <div>{`Rating: ${rating}`}</div>
+        <div>{`Open Now: ${open}`}</div>
         <Link to={`/chat/${id}`}>
           <button>Chat</button>
         </Link>
