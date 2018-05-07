@@ -1,21 +1,19 @@
 import React, { Component } from "react";
-import "./RecCard1.css";
+import "../../RecCard.css";
 import { Link } from "react-router-dom";
 
 class RecCard1 extends Component {
   render() {
-    const { name, address, rating, id, open } = this.props;
-    console.log(open);
+    const { name, address, rating, id } = this.props;
     return (
       <div>
-        <div>{name}</div>
-        <div>{address}</div>
-        <div>{`Rating: ${rating}`}</div>
-        <div>{`Open Now: ${open}`}</div>
+        <div className="recName">{name}</div>
+        <div className="recAddresss">{address}</div>
+        <div className="recRating">{`Rating: ${rating}`}</div>
         <Link to={`/chat/${id}`}>
-          <button>Chat</button>
+          <button className="recChat">Chat</button>
         </Link>
-        <button>Favorite</button>
+        <button className="recFavorite">Favorite</button>
       </div>
     );
   }

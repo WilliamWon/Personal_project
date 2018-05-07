@@ -14,7 +14,6 @@ const Login = () => (
         </a>
       </div>
     </section>
-    <section id="section-b" />
     <div id="homeDesign__container">
       <div className="leftSide">
         <div className="slogan__box">
@@ -23,6 +22,7 @@ const Login = () => (
           <a href={process.env.REACT_APP_LOGIN}>
             <button className="loginButton">LOGIN</button>
           </a>
+          <div class="arrow bounce" />
         </div>
       </div>
       <div className="rightSide">
@@ -33,6 +33,9 @@ const Login = () => (
           <div className="image four" />
         </div>
       </div>
+    </div>
+    <div id="aboutPage">
+      <div />
     </div>
   </div>
 );

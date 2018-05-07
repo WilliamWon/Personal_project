@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./RecMuseums.css";
+import "../Recommended.css";
 import { connect } from "react-redux";
 import { getMuseums } from "../../../ducks/museumReducer";
 import RecCard3 from "./RecCard3/RecCard3";
@@ -26,7 +26,9 @@ class RecMuseums extends Component {
     });
     return (
       <div>
-        <div>Museums</div>
+        <div className="recommendedTitle">{`Museums in ${
+          this.props.user.city
+        }, ${this.props.user.state}`}</div>
         {museumList}
       </div>
     );

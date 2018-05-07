@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./RecDateNight.css";
+import "../Recommended.css";
 import { connect } from "react-redux";
 import { getDates } from "../../../ducks/dateReducer";
 import RecCard2 from "./RecCard2/RecCard2";
@@ -26,7 +26,9 @@ class RecDateNight extends Component {
     });
     return (
       <div>
-        <div>Date Night</div>
+        <div className="recommendedTitle">{`Date night in ${
+          this.props.user.city
+        }, ${this.props.user.state}`}</div>
         {dateList}
       </div>
     );

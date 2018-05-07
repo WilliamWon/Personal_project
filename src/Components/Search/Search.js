@@ -47,7 +47,6 @@ class Search extends Component {
     });
     return (
       <div id="search">
-        <Header />
         <SideNav />
         <div className="searchWrapper">
           <p>Search Here</p>

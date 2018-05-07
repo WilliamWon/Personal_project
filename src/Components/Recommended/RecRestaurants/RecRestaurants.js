@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./RecRestaurants.css";
+import "../Recommended.css";
 import { connect } from "react-redux";
 import { getRestaurants } from "../../../ducks/restaurantReducer";
 import RecCard4 from "./RecCard4/RecCard4";
@@ -28,7 +28,9 @@ class RecRestaurants extends Component {
     });
     return (
       <div>
-        <div>Restaurants</div>
+        <div className="recommendedTitle">{`Restaurants in ${
+          this.props.user.city
+        }, ${this.props.user.state}`}</div>
         {restaurantList}
       </div>
     );

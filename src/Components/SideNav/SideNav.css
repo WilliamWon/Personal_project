@@ -48,7 +48,7 @@
 }
 
 .sideNav__links {
-  font-size: 1.2em;
+  font-size: 0.9em;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   letter-spacing: 2px;
@@ -60,6 +60,6 @@
 
 @media (min-width: 1500px) {
   .sideNav {
-    width: 270px;
+    width: 295px;
   }
 }

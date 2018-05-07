@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./RecBars.css";
+import "../Recommended.css";
 import { connect } from "react-redux";
 import { getBars } from "../../../ducks/barReducer";
 import RecCard1 from "./RecCard1/RecCard1";
@@ -26,7 +26,9 @@ class RecBars extends Component {
     });
     return (
       <div>
-        <div>Bars</div>
+        <div className="recommendedTitle">{`Bars in ${this.props.user.city}, ${
+          this.props.user.state
+        }`}</div>
         {barList}
       </div>
     );

@@ -14,7 +14,7 @@
   width: 90vw;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .logo {
@@ -26,15 +26,37 @@
   text-decoration: none;
 }
 
+.header__filler {
+  display: block;
+  width: 70px;
+  height: 40px;
+}
+
+.header__log {
+  width: 70px;
+  height: 40px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 0.8em;
+  background: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  letter-spacing: 1.5px;
+}
+
 @media (min-width: 1025px) {
   #header {
     border-bottom: none;
   }
   .header__container {
-    justify-content: flex-start;
+    justify-content: space-between;
   }
   .slogan {
     font-size: 4em;
+  }
+  .header__filler {
+    display: none;
   }
 }
 
