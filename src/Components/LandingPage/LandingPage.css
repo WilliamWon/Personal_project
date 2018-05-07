@@ -6,7 +6,33 @@
 
 .section-e {
   width: auto;
-  height: 400px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url(../../images/restaurant.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-attachment: fixed;
+}
+.intro__box {
+  width: auto;
+  height: 20vh;
+  padding-left: 40px;
+  padding-right: 40px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.introduction {
+  font-size: 5em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  color: rgb(34, 34, 34);
 }
 
 .header__container.header__container__success {
@@ -15,8 +41,9 @@
 }
 
 #landingWrapper {
+  margin-top: 10vh;
   margin-left: 206px;
-  z-index: -2;
+  z-index: -10;
 }
 
 @media (min-width: 700px) {
@@ -27,6 +54,9 @@
 
 @media (min-width: 1500px) {
   #landingWrapper {
-    margin-left: 270px;
+    margin-left: 295px;
+  }
+  .introduction {
+    font-size: 7em;
   }
 }

@@ -6,14 +6,14 @@ class RecCard1 extends Component {
   render() {
     const { name, address, rating, id } = this.props;
     return (
-      <div>
+      <div className="recCard">
         <div className="recName">{name}</div>
-        <div className="recAddresss">{address}</div>
+        <div className="recAddress">{address}</div>
         <div className="recRating">{`Rating: ${rating}`}</div>
         <Link to={`/chat/${id}`}>
           <button className="recChat">Chat</button>
         </Link>
-        <button className="recFavorite">Favorite</button>
+        <button className="recFavorite">Fave</button>
       </div>
     );
   }

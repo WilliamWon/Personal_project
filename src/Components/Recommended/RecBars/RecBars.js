@@ -25,11 +25,14 @@ class RecBars extends Component {
       );
     });
     return (
-      <div>
-        <div className="recommendedTitle">{`Bars in ${this.props.user.city}, ${
-          this.props.user.state
-        }`}</div>
-        {barList}
+      <div className="recommended__carrier">
+        <div className="title__carrier">
+          <div className="recommendedTitle">{`Bars in ${
+            this.props.user.city
+          }, ${this.props.user.state}`}</div>
+        </div>
+        <div className="list__carrier">{barList}</div>
+        <div className="recImage one" />
       </div>
     );
   }

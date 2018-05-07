@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Edit from "../Edit/Edit";
 import { updatePost, deletePost } from "../../../../ducks/chatReducer";
 import { connect } from "react-redux";
+import "./PostBox.css";
 
 class PostBox extends Component {
   constructor() {
@@ -51,35 +52,38 @@ class PostBox extends Component {
     const { key, id, username, date, time, comment, userid, user } = this.props;
     const { editing, showMasterMenu } = this.state;
     return (
-      <section key={key} onClick={this.hideMasterMenu}>
+      <section className="post__card" key={key} onClick={this.hideMasterMenu}>
+        <span className="post__username">{username}</span>
+
+        <div className="post__main">
+          <div>
+            {editing ? (
+              <Edit
+                comment={comment}
+                id={id}
+                hideEdit={this.hideEdit}
+                updatePostFn={this.updatePost}
+              />
+            ) : (
+              <span className="post__comment">{comment}</span>
+            )}
+          </div>
+          {/* <span className="post__date">{date}</span> */}
+        </div>
+        <span className="post__time">{time}</span>
         <div>
-          <button onClick={this.toggleMasterMenu} />
           {user.userid === userid && (
             <div>
-              <span onClick={this.showEdit}>Edit</span>
-              <span onClick={() => this.deletePost(id, userid)}>Delete</span>
+              <span className="post__edit" onClick={this.showEdit}>
+                Edit
+              </span>
+              <span
+                className="post__delete"
+                onClick={() => this.deletePost(id, userid)}
+              >
+                Delete
+              </span>
             </div>
-          )}
-        </div>
-
-        <div>
-          <div>
-            <div>Profile Picture</div>
-          </div>
-          <span>{username}</span>
-          <span>{date}</span>
-          <span>{time}</span>
-        </div>
-        <div>
-          {editing ? (
-            <Edit
-              comment={comment}
-              id={id}
-              hideEdit={this.hideEdit}
-              updatePostFn={this.updatePost}
-            />
-          ) : (
-            <span>{comment}</span>
           )}
         </div>
       </section>

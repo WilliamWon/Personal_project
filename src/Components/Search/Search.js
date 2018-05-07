@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Header from "../Header/Header";
 import SideNav from "../SideNav/SideNav";
 import "./Search.css";
+import "../Recommended/Recommended.css";
 
 class Search extends Component {
   constructor() {
@@ -48,20 +49,20 @@ class Search extends Component {
     return (
       <div id="search">
         <SideNav />
+        <Header />
         <div className="searchWrapper">
-          <p>Search Here</p>
-          <form onSubmit={this.onSubmitHandler}>
-            <input
-              className="keywordSearch"
-              placeholder="Enter Keyword"
-              onChange={e => this.typing(e.target.value)}
-            />
-            <button>Search</button>
-          </form>
-          <div className="card__container">{placesList}</div>
-          <Link to="/">
-            <button>Back</button>
-          </Link>
+          <div className="search__stuff">
+            <div className="search__thing">Search Here</div>
+            <form onSubmit={this.onSubmitHandler}>
+              <input
+                className="keywordSearch"
+                placeholder="Enter Keyword"
+                onChange={e => this.typing(e.target.value)}
+              />
+              <button>Search</button>
+            </form>
+          </div>
+          <div className="list__carrier">{placesList}</div>
         </div>
       </div>
     );

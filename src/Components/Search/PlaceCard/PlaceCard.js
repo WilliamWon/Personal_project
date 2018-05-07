@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./PlaceCard.css";
+import "../../Recommended/RecCard.css";
 import { Link } from "react-router-dom";
 
 class PlaceCard extends Component {
@@ -16,23 +16,16 @@ class PlaceCard extends Component {
   }
 
   render() {
-    const { name, address, rating, id, open } = this.props;
+    const { name, address, rating, id } = this.props;
     return (
-      <div className="card">
-        <div className="card__name__carrier">
-          <div className="card__name">{name}</div>
-        </div>
-        <div className="card__line" />
-        <div className="card__address__carrier">
-          <div className="card__address">{address}</div>
-          <Link to={`/chat/${id}`}>
-            <button> Chat </button>
-          </Link>
-          <button>Favorite</button>
-        </div>
-        <div className="card__rating__carrier">
-          <div className="card__rating">{`Rating: ${rating}`}</div>
-        </div>
+      <div className="recCard">
+        <div className="recName">{name}</div>
+        <div className="recAddress">{address}</div>
+        <div className="recRating">{`Rating: ${rating}`}</div>
+        <Link to={`/chat/${id}`}>
+          <button className="recChat">Chat</button>
+        </Link>
+        <button className="recFavorite">Favorite</button>
       </div>
     );
   }

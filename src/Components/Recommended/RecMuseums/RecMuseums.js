@@ -25,11 +25,14 @@ class RecMuseums extends Component {
       );
     });
     return (
-      <div>
-        <div className="recommendedTitle">{`Museums in ${
-          this.props.user.city
-        }, ${this.props.user.state}`}</div>
-        {museumList}
+      <div className="recommended__carrier">
+        <div className="title__carrier">
+          <div className="recommendedTitle">{`Museums in ${
+            this.props.user.city
+          }, ${this.props.user.state}`}</div>
+        </div>
+        <div className="list__carrier">{museumList}</div>
+        <div className="recImage three" />
       </div>
     );
   }

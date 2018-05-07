@@ -5,6 +5,8 @@ import Compose from "./Compose/Compose";
 import { connect } from "react-redux";
 import { getPosts, deletePost, createPost } from "../../ducks/chatReducer";
 import Header from "../Header/Header";
+import SideNav from "../SideNav/SideNav";
+import "./Chat.css";
 
 class Chat extends Component {
   constructor(props) {
@@ -31,14 +33,16 @@ class Chat extends Component {
     console.log(this.state.posts);
     const locationid = this.props.match.params.id;
     return (
-      <div>
+      <div className="chatPage">
         <Header />
-        <p>This is the Chat</p>
-        <Compose createPostFn={this.createPostFn} locationid={locationid} />
-        <Post locationId={this.props.match.params.id} />
-        <Link to="/search">
-          <button>Back To Search</button>
-        </Link>
+        <SideNav />
+        <div className="chat__carrier">
+          <div className="chat__header">
+            <div className="chat__slogan">Tells us what you think!</div>
+          </div>
+          <Compose createPostFn={this.createPostFn} locationid={locationid} />
+          <Post locationId={this.props.match.params.id} />
+        </div>
       </div>
     );
   }

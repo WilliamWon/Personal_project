@@ -8,16 +8,17 @@
 
 #infoConfirm__background {
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #a7dbef;
+  margin-top: 10vh;
 }
 .infoConfirm__form {
   position: relative;
   width: 68vw;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

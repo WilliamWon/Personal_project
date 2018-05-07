@@ -27,11 +27,14 @@ class RecRestaurants extends Component {
       );
     });
     return (
-      <div>
-        <div className="recommendedTitle">{`Restaurants in ${
-          this.props.user.city
-        }, ${this.props.user.state}`}</div>
-        {restaurantList}
+      <div className="recommended__carrier">
+        <div className="title__carrier">
+          <div className="recommendedTitle">{`Restaurants in ${
+            this.props.user.city
+          }, ${this.props.user.state}`}</div>
+        </div>
+        <div className="list__carrier">{restaurantList}</div>
+        <div className="recImage four" />
       </div>
     );
   }

@@ -25,11 +25,14 @@ class RecDateNight extends Component {
       );
     });
     return (
-      <div>
-        <div className="recommendedTitle">{`Date night in ${
-          this.props.user.city
-        }, ${this.props.user.state}`}</div>
-        {dateList}
+      <div className="recommended__carrier">
+        <div className="title__carrier">
+          <div className="recommendedTitle">{`Date night in ${
+            this.props.user.city
+          }, ${this.props.user.state}`}</div>
+        </div>
+        <div className="list__carrier">{dateList}</div>
+        <div className="recImage two" />
       </div>
     );
   }

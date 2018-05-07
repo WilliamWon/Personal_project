@@ -27,11 +27,14 @@ class LandingPage extends Component {
               <SideNav />
               <div id="landingWrapper">
                 <section class="section-e">
-                  <p>{`What's up ${this.props.user.first_name}?`}</p>
-
-                  <Link to="/search">
-                    <button>Search</button>
-                  </Link>
+                  {/* <video>
+                  <source src="" type="video/mp4"/>e
+                </video> */}
+                  <div className="intro__box">
+                    <div className="introduction">{`What's up ${
+                      this.props.user.first_name
+                    }?`}</div>
+                  </div>
                 </section>
                 <RecRestaurants />
                 <RecBars />

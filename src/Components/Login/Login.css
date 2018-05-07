@@ -10,6 +10,7 @@
 /*--- First Page ---*/
 
 #homeDesign__container {
+  margin-top: 10vh;
   width: 100%;
   height: auto;
   display: none;

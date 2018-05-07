@@ -1,6 +1,7 @@
 #search {
   width: 100%;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 .keywordSearch {
@@ -8,5 +9,33 @@
 }
 
 .searchWrapper {
+  margin-top: 10vh;
+  height: auto;
   margin-left: 206px;
+}
+
+.search__stuff {
+  width: auto;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url(../../images/marketPlace.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-attachment: fixed;
+}
+
+.search__thing {
+  font-size: 5em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  color: rgb(34, 34, 34);
+}
+@media (min-width: 1500px) {
+  .searchWrapper {
+    margin-left: 270px;
+  }
 }

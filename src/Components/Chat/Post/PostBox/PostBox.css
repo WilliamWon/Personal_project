@@ -1,0 +1,27 @@
+.post__card {
+  width: 48vw;
+  /* height: 70px; */
+  padding: 20px;
+  /* background: gray; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post__main {
+}
+
+.post__username {
+  width: auto;
+  height: 20px;
+  font-size: 0.8em;
+  font-family: "Roboto", sans-serif;
+}
+.post__time,
+.post__edit,
+.post__delete,
+.post__comment {
+  font-size: 0.8em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
