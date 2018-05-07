@@ -4,6 +4,8 @@ import { getPlaces } from "../../ducks/placesReducer";
 import PlaceCard from "./PlaceCard/PlaceCard";
 import { Link } from "react-router-dom";
 import Header from "../Header/Header";
+import SideNav from "../SideNav/SideNav";
+import "./Search.css";
 
 class Search extends Component {
   constructor() {
@@ -46,25 +48,22 @@ class Search extends Component {
     return (
       <div id="search">
         <Header />
-        <div className="sidenav">
-          <a>ABOUT</a>
-          <a />
-          <a />
-          <a />
+        <SideNav />
+        <div className="searchWrapper">
+          <p>Search Here</p>
+          <form onSubmit={this.onSubmitHandler}>
+            <input
+              className="keywordSearch"
+              placeholder="Enter Keyword"
+              onChange={e => this.typing(e.target.value)}
+            />
+            <button>Search</button>
+          </form>
+          <div className="card__container">{placesList}</div>
+          <Link to="/">
+            <button>Back</button>
+          </Link>
         </div>
-        <p>Search Here</p>
-        <form onSubmit={this.onSubmitHandler}>
-          <input
-            className="keywordSearch"
-            placeholder="Enter Keyword"
-            onChange={e => this.typing(e.target.value)}
-          />
-          <button>Search</button>
-        </form>
-        <div className="card__container">{placesList}</div>
-        <Link to="/">
-          <button>Back</button>
-        </Link>
       </div>
     );
   }

@@ -4,27 +4,6 @@ import Header from "../Header/Header";
 
 const Login = () => (
   <div id="loginPage">
-    {/* <div className="box box1">
-      <div className="minibox">
-        <div className="logo">VENT</div>
-      </div>
-      <div className="mini2" />
-    </div>
-    <div className="box box2">
-      <div />
-      <div className="box2__container">
-        <p className="box2__container__slogan">Ventilate Your Thoughts</p>
-      </div>
-      <div />
-    </div>
-    <div className="box box3">
-      <div />
-      <div className="minibox3">
-        <a href={process.env.REACT_APP_LOGIN}>
-          <button className="loginButton">LOGIN</button>
-        </a>
-      </div>
-    </div> */}
     <Header />
     <section id="section-a">
       <div className="bg" />
@@ -36,6 +15,25 @@ const Login = () => (
       </div>
     </section>
     <section id="section-b" />
+    <div id="homeDesign__container">
+      <div className="leftSide">
+        <div className="slogan__box">
+          <div className="slogan">Ventilate Your Thoughts</div>
+          <div className="slogan__bar" />
+          <a href={process.env.REACT_APP_LOGIN}>
+            <button className="loginButton">LOGIN</button>
+          </a>
+        </div>
+      </div>
+      <div className="rightSide">
+        <div className="imageBoxes">
+          <div className="image one" />
+          <div className="image two" />
+          <div className="image three" />
+          <div className="image four" />
+        </div>
+      </div>
+    </div>
   </div>
 );
 

@@ -1,9 +1,10 @@
 #loginSuccess {
   width: 100%;
   height: 100vh;
+  overflow-x: hidden;
 }
 .section-e {
-  width: 100vw;
+  width: auto;
   height: 200px;
 }
 .header__container.header__container__success {
@@ -11,8 +12,18 @@
   grid-template-columns: 1fr 3fr 1fr;
 }
 
+#landingWrapper {
+  margin-left: 206px;
+  z-index: -2;
+}
 @media (min-width: 700px) {
   .header__container.header__container__success {
     display: flex;
+  }
+}
+
+@media (min-width: 1500px) {
+  #landingWrapper {
+    margin-left: 270px;
   }
 }

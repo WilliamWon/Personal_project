@@ -10,7 +10,7 @@ import RecDateNight from "../Recommended/RecDateNight/RecDateNight";
 import RecMuseums from "../Recommended/RecMuseums/RecMuseums";
 import RecRestaurants from "../Recommended/RecRestaurants/RecRestaurants";
 import Header from "../Header/Header";
-
+import SideNav from "../SideNav/SideNav";
 class LandingPage extends Component {
   componentDidMount() {
     this.props.getUser();
@@ -24,23 +24,20 @@ class LandingPage extends Component {
           this.props.user.first_name && this.props.user.email ? (
             <div id="loginSuccess">
               <Header />
-              <div className="sideNav">
-                <a>About</a>
-                <a>Search</a>
-                <a>Favorites</a>
-                <a href={process.env.REACT_APP_LOGOUT}>Logout</a>
-              </div>
-              <section class="section-e">
-                <p>{`What's up ${this.props.user.first_name}?`}</p>
+              <SideNav />
+              <div id="landingWrapper">
+                <section class="section-e">
+                  <p>{`What's up ${this.props.user.first_name}?`}</p>
 
-                <Link to="/search">
-                  <button>Search</button>
-                </Link>
-              </section>
-              <RecRestaurants />
-              <RecBars />
-              <RecMuseums />
-              <RecDateNight />
+                  <Link to="/search">
+                    <button>Search</button>
+                  </Link>
+                </section>
+                <RecRestaurants />
+                <RecBars />
+                <RecMuseums />
+                <RecDateNight />
+              </div>
             </div>
           ) : (
             <Information />
