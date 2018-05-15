@@ -49,8 +49,8 @@ class PostBox extends Component {
   }
 
   render() {
-    const { key, id, username, date, time, comment, userid, user } = this.props;
-    const { editing, showMasterMenu } = this.state;
+    const { key, id, username, time, comment, userid, user } = this.props;
+    const { editing } = this.state;
     return (
       <section className="post__card" key={key} onClick={this.hideMasterMenu}>
         <span className="post__username">{username}</span>

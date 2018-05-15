@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import { getUser } from "../../ducks/userReducer";
 import "./LandingPage.css";
 import Information from "../Information/Information";

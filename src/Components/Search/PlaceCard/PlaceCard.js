@@ -25,7 +25,7 @@ class PlaceCard extends Component {
         <Link to={`/chat/${id}`}>
           <button className="recChat">Chat</button>
         </Link>
-        <button className="recFavorite">Favorite</button>
+        <button className="recFavorite">Fave</button>
       </div>
     );
   }

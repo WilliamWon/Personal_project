@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import Post from "./Post/Post";
 import Compose from "./Compose/Compose";
 import { connect } from "react-redux";
@@ -39,8 +38,8 @@ class Chat extends Component {
         <div className="chat__carrier">
           <div className="chat__header">
             <div className="chat__slogan">Tells us what you think!</div>
+            <Compose createPostFn={this.createPostFn} locationid={locationid} />
           </div>
-          <Compose createPostFn={this.createPostFn} locationid={locationid} />
           <Post locationId={this.props.match.params.id} />
         </div>
       </div>

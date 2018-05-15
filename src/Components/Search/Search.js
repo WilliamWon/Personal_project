@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getPlaces } from "../../ducks/placesReducer";
 import PlaceCard from "./PlaceCard/PlaceCard";
-import { Link } from "react-router-dom";
 import Header from "../Header/Header";
 import SideNav from "../SideNav/SideNav";
 import "./Search.css";

@@ -1,31 +1,34 @@
 .chatPage {
   width: 100%;
-  height: 100vh;
+  height: auto;
   overflow-x: hidden;
 }
 
 .chat__carrier {
   width: auto;
-  height: 90vh;
+  height: auto;
   margin-top: 10vh;
   margin-left: 206px;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.chat__header {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding-top: 70px;
 }
 
 .chat__slogan {
   font-size: 4em;
   font-family: "Roboto", sans-serif;
   font-weight: 900;
-}
-
-.chat__header {
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 @media (min-width: 1500px) {
