@@ -49,40 +49,41 @@ class PostBox extends Component {
   }
 
   render() {
-    const { key, id, username, time, comment, userid, user } = this.props;
+    const { key, id, username, time, comment, userid, user, date } = this.props;
     const { editing } = this.state;
     return (
       <section className="post__card" key={key} onClick={this.hideMasterMenu}>
-        <span className="post__username">{username}</span>
-
-        <div className="post__main">
-          <div>
-            {editing ? (
-              <Edit
-                comment={comment}
-                id={id}
-                hideEdit={this.hideEdit}
-                updatePostFn={this.updatePost}
-              />
-            ) : (
-              <span className="post__comment">{comment}</span>
-            )}
-          </div>
-          {/* <span className="post__date">{date}</span> */}
+        <div className="post__info__container">
+          <span className="post__username">{username}</span>
+          <span className="post__date">{date}</span>
+          <span className="post__time">{time}</span>
         </div>
-        <span className="post__time">{time}</span>
-        <div>
+
+        <div className="post__edit__comment">
+          {editing ? (
+            <Edit
+              comment={comment}
+              id={id}
+              hideEdit={this.hideEdit}
+              updatePostFn={this.updatePost}
+            />
+          ) : (
+            <span className="post__comment">{comment}</span>
+          )}
+        </div>
+
+        <div className="post__edit__container">
           {user.userid === userid && (
             <div>
-              <span className="post__edit" onClick={this.showEdit}>
+              <button className="post__edit" onClick={this.showEdit}>
                 Edit
-              </span>
-              <span
+              </button>
+              <button
                 className="post__delete"
                 onClick={() => this.deletePost(id, userid)}
               >
                 Delete
-              </span>
+              </button>
             </div>
           )}
         </div>

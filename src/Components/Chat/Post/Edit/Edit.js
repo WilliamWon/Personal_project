@@ -27,6 +27,7 @@ class Edit extends Component {
     return (
       <section>
         <textarea
+          id="update__text"
           value={text}
           onChange={e => this.updateText(e.target.value)}
         />

@@ -1,27 +1,61 @@
 .post__card {
-  width: 48vw;
-  /* height: 70px; */
-  padding: 20px;
-  /* background: gray; */
+  width: 50vw;
+  height: auto;
+  /* background: pink; */
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  /* border: solid 2px black; */
+  box-sizing: border-box;
 }
 
-.post__main {
+.post__info__container {
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5vw 0 1.5vw;
 }
 
+.post__edit__comment {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  background: #a7dbef;
+  padding: 20px 40px 20px 40px;
+  text-align: left;
+}
+
+.post__edit__container {
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1.5vw;
+}
 .post__username {
   width: auto;
-  height: 20px;
+  height: auto;
   font-size: 0.8em;
   font-family: "Roboto", sans-serif;
 }
 .post__time,
 .post__edit,
 .post__delete,
-.post__comment {
+.post__comment,
+.post__date {
   font-size: 0.8em;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+}
+
+.post__edit {
+  margin-right: 10px;
 }
