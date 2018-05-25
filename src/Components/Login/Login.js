@@ -1,6 +1,7 @@
 import React from "react";
 import "./Login.css";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const Login = () => (
   <div id="loginPage">
@@ -37,6 +38,7 @@ const Login = () => (
     <div id="aboutPage">
       <div />
     </div>
+    <Footer />
   </div>
 );
 
