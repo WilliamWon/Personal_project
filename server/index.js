@@ -73,6 +73,8 @@ app.get(
 //______Auth endpoints
 app.get("/logout", logout);
 app.get("/api/me", getUser);
+
+//______Search endpoints
 app.get("/api/places", placeCtrl.getPlaces);
 
 //______Info endpoints

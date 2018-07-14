@@ -1,43 +1,57 @@
 import React from "react";
-import "./Login.css";
+// import "./Login.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import styled from "styled-components";
 
+const LoginBody = styled.section`
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  background: skyblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+const Slogan = styled.p`
+  font-size: 4.5em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  line-height: 1.4em;
+  letter-spacing: 0.5px;
+  color: white;
+  margin: 30px 0 30px 0;
+`;
+const LoginButton = styled.button`
+  border-radius: 4px;
+  background-color: #1ed4f4;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  letter-spacing: 2px;
+  outline: none;
+`;
+const bankDesign = styled.div``;
 const Login = () => (
   <div id="loginPage">
     <Header />
-    <section id="section-a">
+    <LoginBody>
       <div className="bg" />
       <div className="mid ">
-        <p className="slogan">Ventilate Your Thoughts</p>
+        <Slogan>Ventilate Your Thoughts</Slogan>
         <a href={process.env.REACT_APP_LOGIN}>
-          <button className="loginButton">LOGIN</button>
+          <LoginButton className="loginButton">LOGIN</LoginButton>
         </a>
       </div>
-    </section>
-    <div id="homeDesign__container">
-      <div className="leftSide">
-        <div className="slogan__box">
-          <div className="slogan">Ventilate Your Thoughts</div>
-          <div className="slogan__bar" />
-          <a href={process.env.REACT_APP_LOGIN}>
-            <button className="loginButton">LOGIN</button>
-          </a>
-          <div class="arrow bounce" />
-        </div>
-      </div>
-      <div className="rightSide">
-        <div className="imageBoxes">
-          <div className="image one" />
-          <div className="image two" />
-          <div className="image three" />
-          <div className="image four" />
-        </div>
-      </div>
-    </div>
-    <div id="aboutPage">
-      <div />
-    </div>
+    </LoginBody>
     <Footer />
   </div>
 );
