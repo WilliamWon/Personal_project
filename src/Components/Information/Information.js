@@ -11,7 +11,70 @@ import {
 } from "../../ducks/infoReducer";
 import "./Information.css";
 import Header from "../Header/Header";
+import styled from "styled-components";
 
+const InfoInput = styled.div`
+  width: 100%;
+  height: 100vh;
+`;
+const InfoInputBackground = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: #1ed4f4; */
+  background-color: #a7dbef;
+`;
+const InfoInputContainer = styled.div`
+  position: relative;
+  width: 68vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  margin-top: 10vh;
+`;
+const InfoInputIntro = styled.div`
+  width: 100%;
+  height: 30vh;
+  font-size: 1.4em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+const InfoInputSections = styled.div`
+  width: 100%;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+`;
+const InfoInputHead = styled.div`
+  font-family: "Bevan", cursive;
+  font-size: 2.1em;
+`;
+const InfoInputArea = styled.input`
+  font-size: 0.8em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  height: 30px;
+  outline: none;
+  border: solid 1px rgb(255, 204, 128);
+  padding-left: 15px;
+  border-radius: 24px;
+  width: 300px;
+  padding-top: 1px;
+
+  &.username {
+  }
+`;
 class Information extends Component {
   render() {
     const {
@@ -24,60 +87,60 @@ class Information extends Component {
     } = this.props;
 
     return (
-      <div
-        // name="myForm"
-        // action="/action_page.php"
-        // onsubmit="return validateForm()"
-        // method="post"
-        id="infoInput"
+      <InfoInput
+      // name="myForm"
+      // action="/action_page.php"
+      // onsubmit="return validateForm()"
+      // method="post"
+      // id="infoInput"
       >
         <Header />
-        <div id="infoInput__background">
-          <div className="infoInput__container">
-            <div className="infoInput__intro">
-              <div className="infoInput__head">WELCOME</div>
+        <InfoInputBackground>
+          <InfoInputContainer className="infoInput__container">
+            <InfoInputIntro className="infoInput__intro">
+              <InfoInputHead className="infoInput__head">WELCOME</InfoInputHead>
               Let us get to know you a little better...
-            </div>
-            <div className="infoInput__sections">
-              <input
+            </InfoInputIntro>
+            <InfoInputSections className="infoInput__sections">
+              <InfoInputArea
                 className="infoInputArea username"
                 placeholder="Desired Display Name"
                 type="text"
                 onChange={e => updateUserName(e.target.value)}
               />
-              <input
+              <InfoInputArea
                 className="infoInputArea email"
                 placeholder="Primary Email"
                 type="text"
                 onChange={e => updateEmail(e.target.value)}
               />
-              <input
+              <InfoInputArea
                 className="infoInputArea address"
                 placeholder="Home Address"
                 type="text"
                 onChange={e => updateAddress(e.target.value)}
               />
               <div className="cityState">
-                <input
+                <InfoInputArea
                   className="infoInputArea city"
                   placeholder="City"
                   type="text"
                   onChange={e => updateCity(e.target.value)}
                 />
-                <input
+                <InfoInputArea
                   className="infoInputArea state"
                   placeholder="State"
                   type="text"
                   onChange={e => updateMyState(e.target.value)}
                 />
               </div>
-              <input
+              <InfoInputArea
                 className="infoInputArea zipcode"
                 placeholder="Zipcode"
                 type="number"
                 onChange={e => updateZip(e.target.value)}
               />
-            </div>
+            </InfoInputSections>
             <div className="infoInput__confirm__container">
               <Link to="/confirm">
                 <button className="infoInput__confirm">
@@ -86,9 +149,9 @@ class Information extends Component {
               </Link>
             </div>
             <div className="filler" />
-          </div>
-        </div>
-      </div>
+          </InfoInputContainer>
+        </InfoInputBackground>
+      </InfoInput>
     );
   }
 }
@@ -105,11 +168,14 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, {
-  updateUserName,
-  updateEmail,
-  updateAddress,
-  updateCity,
-  updateMyState,
-  updateZip
-})(Information);
+export default connect(
+  mapStateToProps,
+  {
+    updateUserName,
+    updateEmail,
+    updateAddress,
+    updateCity,
+    updateMyState,
+    updateZip
+  }
+)(Information);

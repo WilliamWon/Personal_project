@@ -3,7 +3,14 @@ import React from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import styled from "styled-components";
-
+const LoginPage = styled.div`
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+`;
 const LoginBody = styled.section`
   box-sizing: border-box;
   width: 100%;
@@ -38,22 +45,28 @@ const LoginButton = styled.button`
   font-weight: 400;
   letter-spacing: 2px;
   outline: none;
+
+  &.loginButton:hover {
+    box-shadow: 0 0px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+    opacity: 0.6;
+  }
 `;
-const bankDesign = styled.div``;
+const Mid = styled.div`
+  background: lightpink;
+`;
 const Login = () => (
-  <div id="loginPage">
+  <LoginPage>
     <Header />
     <LoginBody>
-      <div className="bg" />
-      <div className="mid ">
+      <Mid>
         <Slogan>Ventilate Your Thoughts</Slogan>
         <a href={process.env.REACT_APP_LOGIN}>
           <LoginButton className="loginButton">LOGIN</LoginButton>
         </a>
-      </div>
+      </Mid>
     </LoginBody>
     <Footer />
-  </div>
+  </LoginPage>
 );
 
 export default Login;
