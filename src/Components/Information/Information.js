@@ -74,6 +74,58 @@ const InfoInputArea = styled.input`
 
   &.username {
   }
+  &.email {
+  }
+  &.address {
+  }
+  &.zipcode {
+  }
+  &.city {
+    width: 225px;
+  }
+  &.state {
+    width: 45px;
+  }
+`;
+const CityState = styled.div`
+  width: 318px;
+  display: flex;
+  justify-content: space-between;
+`;
+const InfoInputConfirmContainer = styled.div`
+  width: 100%;
+  height: 20vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+const InfoInputConfirm = styled.button`
+  border-radius: 4px;
+  background-color: #1ed4f4;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  outline: none;
+
+  &.confirmHover:hover {
+    box-shadow: 0 0px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+    opacity: 0.6;
+  }
+`;
+const Filler = styled.div`
+  width: 60vw;
+  height: 5vh;
+  background-color: white;
 `;
 class Information extends Component {
   render() {
@@ -96,59 +148,59 @@ class Information extends Component {
       >
         <Header />
         <InfoInputBackground>
-          <InfoInputContainer className="infoInput__container">
-            <InfoInputIntro className="infoInput__intro">
-              <InfoInputHead className="infoInput__head">WELCOME</InfoInputHead>
+          <InfoInputContainer>
+            <InfoInputIntro>
+              <InfoInputHead>WELCOME</InfoInputHead>
               Let us get to know you a little better...
             </InfoInputIntro>
-            <InfoInputSections className="infoInput__sections">
+            <InfoInputSections>
               <InfoInputArea
-                className="infoInputArea username"
+                className="username"
                 placeholder="Desired Display Name"
                 type="text"
                 onChange={e => updateUserName(e.target.value)}
               />
               <InfoInputArea
-                className="infoInputArea email"
+                className="email"
                 placeholder="Primary Email"
                 type="text"
                 onChange={e => updateEmail(e.target.value)}
               />
               <InfoInputArea
-                className="infoInputArea address"
+                className="address"
                 placeholder="Home Address"
                 type="text"
                 onChange={e => updateAddress(e.target.value)}
               />
-              <div className="cityState">
+              <CityState className="cityState">
                 <InfoInputArea
-                  className="infoInputArea city"
+                  className="city"
                   placeholder="City"
                   type="text"
                   onChange={e => updateCity(e.target.value)}
                 />
                 <InfoInputArea
-                  className="infoInputArea state"
+                  className="state"
                   placeholder="State"
                   type="text"
                   onChange={e => updateMyState(e.target.value)}
                 />
-              </div>
+              </CityState>
               <InfoInputArea
-                className="infoInputArea zipcode"
+                className="zipcode"
                 placeholder="Zipcode"
                 type="number"
                 onChange={e => updateZip(e.target.value)}
               />
             </InfoInputSections>
-            <div className="infoInput__confirm__container">
+            <InfoInputConfirmContainer>
               <Link to="/confirm">
-                <button className="infoInput__confirm">
+                <InfoInputConfirm className="confirmHover">
                   <span>Complete</span>
-                </button>
+                </InfoInputConfirm>
               </Link>
-            </div>
-            <div className="filler" />
+            </InfoInputConfirmContainer>
+            <Filler />
           </InfoInputContainer>
         </InfoInputBackground>
       </InfoInput>
