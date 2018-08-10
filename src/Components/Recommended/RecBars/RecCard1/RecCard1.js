@@ -1,20 +1,27 @@
 import React, { Component } from "react";
-import "../../RecCard.css";
 import { Link } from "react-router-dom";
+import {
+  RecCard,
+  RecName,
+  RecAddress,
+  RecRating,
+  RecChat,
+  RecFavorite
+} from "../../RecCard";
 
 class RecCard1 extends Component {
   render() {
     const { name, address, rating, id } = this.props;
     return (
-      <div className="recCard">
-        <div className="recName">{name}</div>
-        <div className="recAddress">{address}</div>
-        <div className="recRating">{`Rating: ${rating}`}</div>
+      <RecCard className="recCardHover">
+        <RecName>{name}</RecName>
+        <RecAddress>{address}</RecAddress>
+        <RecRating>{`Rating: ${rating}`}</RecRating>
         <Link to={`/chat/${id}`}>
-          <button className="recChat">Chat</button>
+          <RecChat>Chat</RecChat>
         </Link>
-        <button className="recFavorite">Fave</button>
-      </div>
+        <RecFavorite>Fave</RecFavorite>
+      </RecCard>
     );
   }
 }

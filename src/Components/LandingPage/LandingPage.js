@@ -11,6 +11,7 @@ import RecRestaurants from "../Recommended/RecRestaurants/RecRestaurants";
 import Header from "../Header/Header";
 import SideNav from "../SideNav/SideNav";
 import styled from "styled-components";
+import backImg from "../../images/restaurant.jpg";
 
 const LoginSuccess = styled.div`
   width: 100%;
@@ -29,7 +30,7 @@ const SectionE = styled.section`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-image: url(../../images/restaurant.jpg);
+  background-image: url(${backImg});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right bottom;

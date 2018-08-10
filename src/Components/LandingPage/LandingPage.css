@@ -1,49 +1,6 @@
-#loginSuccess {
-  width: 100%;
-  height: auto;
-  overflow-x: hidden;
-}
-
-.section-e {
-  width: auto;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  background-image: url(../../images/restaurant.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-attachment: fixed;
-}
-.intro__box {
-  width: auto;
-  height: 20vh;
-  padding-left: 40px;
-  padding-right: 40px;
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.introduction {
-  font-size: 5em;
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  color: rgb(34, 34, 34);
-}
-
 .header__container.header__container__success {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-}
-
-#landingWrapper {
-  margin-top: 10vh;
-  margin-left: 206px;
-  z-index: -10;
 }
 
 @media (min-width: 700px) {
