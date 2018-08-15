@@ -3,6 +3,13 @@ import "../Recommended.css";
 import { connect } from "react-redux";
 import { getDates } from "../../../ducks/dateReducer";
 import RecCard2 from "./RecCard2/RecCard2";
+import {
+  RecommendedCarrier,
+  TitleCarrier,
+  RecommendedTitle,
+  ListCarrier,
+  RecImage
+} from "../Recommended";
 
 class RecDateNight extends Component {
   componentDidMount() {
@@ -25,15 +32,15 @@ class RecDateNight extends Component {
       );
     });
     return (
-      <div className="recommended__carrier">
-        <div className="title__carrier">
-          <div className="recommendedTitle">{`Date night in ${
+      <RecommendedCarrier className="recommended__carrier">
+        <TitleCarrier className="title__carrier">
+          <RecommendedTitle className="recommendedTitle">{`Date night in ${
             this.props.user.city
-          }, ${this.props.user.state}`}</div>
-        </div>
-        <div className="list__carrier">{dateList}</div>
-        <div className="recImage two" />
-      </div>
+          }, ${this.props.user.state}`}</RecommendedTitle>
+        </TitleCarrier>
+        <ListCarrier className="list__carrier">{dateList}</ListCarrier>
+        <RecImage className="pageBreak" />
+      </RecommendedCarrier>
     );
   }
 }
@@ -44,4 +51,7 @@ const mapStateToProps = state => {
     user: state.userReducer.user
   };
 };
-export default connect(mapStateToProps, { getDates })(RecDateNight);
+export default connect(
+  mapStateToProps,
+  { getDates }
+)(RecDateNight);

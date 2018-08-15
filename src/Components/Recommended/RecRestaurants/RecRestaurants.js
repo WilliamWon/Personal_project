@@ -3,6 +3,13 @@ import "../Recommended.css";
 import { connect } from "react-redux";
 import { getRestaurants } from "../../../ducks/restaurantReducer";
 import RecCard4 from "./RecCard4/RecCard4";
+import {
+  RecommendedCarrier,
+  TitleCarrier,
+  RecommendedTitle,
+  ListCarrier,
+  RecImage
+} from "../Recommended";
 
 class RecRestaurants extends Component {
   componentDidMount() {
@@ -27,15 +34,15 @@ class RecRestaurants extends Component {
       );
     });
     return (
-      <div className="recommended__carrier">
-        <div className="title__carrier">
-          <div className="recommendedTitle">{`Restaurants in ${
-            this.props.user.city
-          }, ${this.props.user.state}`}</div>
-        </div>
-        <div className="list__carrier">{restaurantList}</div>
-        <div className="recImage four" />
-      </div>
+      <RecommendedCarrier>
+        <TitleCarrier>
+          <RecommendedTitle>{`Restaurants in ${this.props.user.city}, ${
+            this.props.user.state
+          }`}</RecommendedTitle>
+        </TitleCarrier>
+        <ListCarrier>{restaurantList}</ListCarrier>
+        <RecImage className="pageBreak" />
+      </RecommendedCarrier>
     );
   }
 }
@@ -47,4 +54,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { getRestaurants })(RecRestaurants);
+export default connect(
+  mapStateToProps,
+  { getRestaurants }
+)(RecRestaurants);

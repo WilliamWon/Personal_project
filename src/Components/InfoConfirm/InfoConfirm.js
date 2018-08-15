@@ -4,8 +4,116 @@ import { Link, Redirect } from "react-router-dom";
 import { updateUser } from "../../ducks/userReducer";
 import Header from "../Header/Header";
 import "./InfoConfirm.css";
+import styled from "styled-components";
 
-class InfoConfirm extends Component {
+const InfoConfirmMain = styled.div`
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const InfoConfirmBackground = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #a7dbef;
+  margin-top: 10vh;
+`;
+const InfoConfirmForm = styled.div`
+  position: relative;
+  width: 68vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+`;
+const InfoConfirmOutro = styled.div`
+  width: 100%;
+  height: 30vh;
+  font-size: 1.4em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+const InfoConfirmHead = styled.div`
+  font-family: "Bevan", cursive;
+  font-size: 2.1em;
+`;
+const InfoConfirmStatusContainer = styled.div`
+  height: 35vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &.pattern > div {
+    background: #eee;
+  }
+  &.pattern > div:nth-child(odd) {
+    background: #ddd;
+  }
+`;
+const InfoConfirmConfirm = styled.div`
+  width: 100%;
+  height: 20vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+`;
+const InfoConfirmStatus = styled.div`
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 0.7em;
+  /* padding-left: 10px; */
+  /* padding-right: 10px; */
+  padding: 0 15px 0 15px;
+`;
+const InfoConfirmResults = styled.div`
+  font-size: 0.7em;
+`;
+const FillerSpace = styled.div`
+  height: 30px;
+`;
+const Filler = styled.div`
+  width: 60vw;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+`;
+const BackButton = styled.button`
+  border-radius: 4px;
+  width: 60px;
+  height: 25px;
+  background: rgb(255, 204, 128);
+  outline: none;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 0.7em;
+  letter-spacing: 0.8px;
+  color: white;
+  &.backHover {
+    box-shadow: 0 0px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+    opacity: 0.6;
+  }
+`;
+const InfoConfirm = class InfoConfirm extends Component {
   constructor(props) {
     super(props);
     this.confirmInfo = this.confirmInfo.bind(this);
@@ -35,78 +143,70 @@ class InfoConfirm extends Component {
       return <Redirect to="/" />;
     }
     return (
-      <div id="infoConfirm">
+      <InfoConfirmMain>
         <Header />
-        <div id="infoConfirm__background">
-          <div className="infoConfirm__form">
-            <div className="infoConfirm__outro">
-              <div className="infoConfirm__head">Almost Done</div>
+        <InfoConfirmBackground>
+          <InfoConfirmForm>
+            <InfoConfirmOutro>
+              <InfoConfirmHead>Almost Done</InfoConfirmHead>
               Does this information look correct?
-            </div>
-            <div className="infoConfirm__status__container">
+            </InfoConfirmOutro>
+            <InfoConfirmStatusContainer className="pattern">
               <div>
-                <div className="infoConfirm__status">
+                <InfoConfirmStatus>
                   User:
-                  <div className="infoConfirm__results">
-                    {this.props.username}
-                  </div>
-                </div>
+                  <InfoConfirmResults>{this.props.username}</InfoConfirmResults>
+                </InfoConfirmStatus>
               </div>
               <div>
-                <div className="infoConfirm__status">
+                <InfoConfirmStatus>
                   Email:
-                  <div className="infoConfirm__results">{this.props.email}</div>
-                </div>
+                  <InfoConfirmResults>{this.props.email}</InfoConfirmResults>
+                </InfoConfirmStatus>
               </div>
               <div>
-                <div className="infoConfirm__status">
+                <InfoConfirmStatus>
                   Address:
-                  <div className="infoConfirm__results">
+                  <InfoConfirmResults>
                     {this.props.street_address}
-                  </div>
-                </div>
+                  </InfoConfirmResults>
+                </InfoConfirmStatus>
               </div>
               <div>
-                <div className="infoConfirm__status">
+                <InfoConfirmStatus>
                   City:
-                  <div className="infoConfirm__results">{this.props.city}</div>
-                </div>
+                  <InfoConfirmResults>{this.props.city}</InfoConfirmResults>
+                </InfoConfirmStatus>
               </div>
               <div>
-                <div className="infoConfirm__status">
+                <InfoConfirmStatus>
                   State:
-                  <div className="infoConfirm__results">
-                    {this.props.myState}
-                  </div>
-                </div>
+                  <InfoConfirmResults>{this.props.myState}</InfoConfirmResults>
+                </InfoConfirmStatus>
               </div>
               <div>
-                <div className="infoConfirm__status">
+                <InfoConfirmStatus>
                   <div>Zipcode:</div>
-                  <div className="infoConfirm__results">
-                    {this.props.zipcode}
-                  </div>
-                </div>
+                  <InfoConfirmResults>{this.props.zipcode}</InfoConfirmResults>
+                </InfoConfirmStatus>
               </div>
-            </div>
-            <div className="infoConfirm__confirm__container">
+            </InfoConfirmStatusContainer>
+            <InfoConfirmConfirm>
               {/* <Link to="/"> */}
-              <div className="filler__space" />
-              <button className="infoInput__confirm" onClick={this.confirmInfo}>
-                Confirm
-              </button>
+              <FillerSpace />
+              <BackButton onClick={this.confirmInfo}>Confirm</BackButton>
               <Link to="/">
-                <button className="backButton">Back</button>
+                <BackButton className="backHover">Back</BackButton>
               </Link>
               {/* </Link> */}
-            </div>
-            <div className="filler" />
-          </div>
-        </div>
-      </div>
+            </InfoConfirmConfirm>
+            <Filler />
+          </InfoConfirmForm>
+        </InfoConfirmBackground>
+      </InfoConfirmMain>
     );
   }
-}
+};
 
 const mapStateToProps = state => {
   return {
@@ -122,4 +222,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { updateUser })(InfoConfirm);
+export default connect(
+  mapStateToProps,
+  { updateUser }
+)(InfoConfirm);

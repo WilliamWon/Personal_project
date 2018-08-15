@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import recPic from "../../images/restaurant.jpg";
 
 export const RecommendedCarrier = styled.div`
   display: flex;
@@ -38,7 +39,7 @@ export const RecImage = styled.div`
   height: 300px;
 
   &.pageBreak {
-    background-image: url(../../images/restaurant.jpg);
+    background-image: url(${recPic});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right bottom;
