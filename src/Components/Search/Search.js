@@ -6,6 +6,8 @@ import Header from "../Header/Header";
 import SideNav from "../SideNav/SideNav";
 import "./Search.css";
 import "../Recommended/Recommended.css";
+import styled from "styled-components";
+import { ListCarrier } from "../Recommended/Recommended";
 
 class Search extends Component {
   constructor() {
@@ -61,7 +63,7 @@ class Search extends Component {
               <button>Search</button>
             </form>
           </div>
-          <div className="list__carrier">{placesList}</div>
+          <ListCarrier>{placesList}</ListCarrier>
         </div>
       </div>
     );
@@ -72,4 +74,7 @@ const mapStateToProps = state => {
   return { ...state.placesReducer };
 };
 
-export default connect(mapStateToProps, { getPlaces })(Search);
+export default connect(
+  mapStateToProps,
+  { getPlaces }
+)(Search);

@@ -12,6 +12,7 @@ const placeCtrl = require("./controllers/placeCtrl");
 const postCtrl = require("./controllers/postCtrl");
 const infoCtrl = require("./controllers/infoCtrl");
 const recCtrl = require("./controllers/recCtrl");
+const favCtrl = require("./controllers/favCtrl");
 
 const port = process.env.PORT || 3001;
 
@@ -93,6 +94,11 @@ app.get("/api/bars", recCtrl.getBars);
 app.get("/api/museums", recCtrl.getMuseums);
 app.get("/api/restaurants", recCtrl.getRestaurants);
 app.get("/api/dates", recCtrl.getDates);
+
+//______Favorites endpoints
+app.get("/api/favorites", favCtrl.getFavorites);
+app.post("/api/favorites", favCtrl.createFavorites);
+app.delete("/api/favorites", favCtrl.deleteFavorites);
 
 app.get("*", (req, res, next) => {
   res.sendFile(path.join(__dirname, "/../build/index.html"));

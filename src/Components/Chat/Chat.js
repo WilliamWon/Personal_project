@@ -37,7 +37,7 @@ class Chat extends Component {
         <SideNav />
         <div className="chat__carrier">
           <div className="chat__header">
-            <div className="chat__slogan">Tells us what you think!</div>
+            <div className="chat__slogan">Tell us what you think!</div>
             <Compose createPostFn={this.createPostFn} locationid={locationid} />
           </div>
           <Post locationId={this.props.match.params.id} />
@@ -52,8 +52,11 @@ const mapStateToProps = state => {
     ...state.chatReducer
   };
 };
-export default connect(mapStateToProps, {
-  getPosts,
-  deletePost,
-  createPost
-})(Chat);
+export default connect(
+  mapStateToProps,
+  {
+    getPosts,
+    deletePost,
+    createPost
+  }
+)(Chat);

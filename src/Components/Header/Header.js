@@ -11,8 +11,8 @@ const HeaderMain = styled.div`
   position: fixed;
   align-items: center;
   justify-content: center;
-  /* background: #1ed4f4; */
-  /* background: rgb(34, 34, 34); */
+  background: #1ed4f4;
+  background: rgb(34, 34, 34);
   z-index: 4;
 `;
 const HeaderContainer = styled.div`
@@ -21,7 +21,7 @@ const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
 `;
 const HeaderFiller = styled.div`
   display: block;

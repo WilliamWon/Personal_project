@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "../../Recommended/RecCard.css";
 import { Link } from "react-router-dom";
-
+import { createFavorites } from "../../../ducks/favReducer";
+import { connect } from "react-redux";
 class PlaceCard extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +15,10 @@ class PlaceCard extends Component {
   handleSwitch() {
     this.setState({ display: true });
   }
-
+  addToFavorite() {
+    const { createFavorites, name, address, rating, id, userid } = this.props;
+    createFavorites(name, address, rating, id, userid);
+  }
   render() {
     const { name, address, rating, id } = this.props;
     return (
@@ -25,9 +29,21 @@ class PlaceCard extends Component {
         <Link to={`/chat/${id}`}>
           <button className="recChat">Chat</button>
         </Link>
-        <button className="recFavorite">Fave</button>
+        <button onClick={this.addToFavorite} className="recFavorite">
+          Fave
+        </button>
       </div>
     );
   }
 }
-export default PlaceCard;
+
+const mapStateToProps = state => {
+  return {
+    ...state.favoritesReducer
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { createFavorites }
+)(PlaceCard);

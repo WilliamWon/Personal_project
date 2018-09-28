@@ -8,6 +8,8 @@ import {
   RecChat,
   RecFavorite
 } from "../../RecCard";
+import { connect } from "react-redux";
+import { createFavorites } from "../../../../ducks/favReducer";
 
 class RecCard1 extends Component {
   render() {
@@ -26,4 +28,13 @@ class RecCard1 extends Component {
   }
 }
 
-export default RecCard1;
+const mapStateToProps = state => {
+  return {
+    ...state.favReducer
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { createFavorites }
+)(RecCard1);
